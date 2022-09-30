@@ -78,3 +78,7 @@ Mocks possuem o objetivo de simular comportamentos das dependências de uma clas
 ## Quais as maneiras de adicionar o Mockito à uma aplicação?
 * Baixando e adicionando seus jar’s na aplicação -> Podemos baixar os jar’s do Mockito e adicioná-los ao build path da aplicação.
 * Declarando-o como dependência da aplicação -> É possível declarar o Mockito como dependência da aplicação, utilizando o Maven, Gradle ou outra ferramenta de build/gestão de dependências.
+
+## Como podemos pedir ao Mockito para que crie um mock de uma determinada classe?
+Essa é uma das maneiras de criar um mock com o Mockito: 
+    Mockito.mock(Classe.class)
