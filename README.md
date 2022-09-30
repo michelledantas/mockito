@@ -68,6 +68,10 @@ Porém, perceba que temos um problema: se tivermos que criar uma classe "dublê"
 
 Em vez disso, queremos escrever o nosso teste de unidade independentemente das outras classes Mock. É para isso que existem as bibliotecas de Mock: para não termos que dedicar tanto trabalho escrevendo as classes Mock uma a uma. Em vez disso, a biblioteca usa algum recurso próprio para criar essa classe dinamicamente e simula as dependências da classe que queremos testar.
 
+O mais interessante é que podemos passar um Mock como parâmetro para outra classe. Assim, se tivermos uma classe que depende de outra, por exemplo, podemos passar como parâmetro um mock, permitindo que façamos testes a nível de unidade, em vez de testes de integração.
+
+O Mockito se tornou a principal biblioteca para Mocks em Java devido à sua simplicidade. Ele possui uma API para criar Mock e simular comportamentos, a qual é muito simples de usar e fácil de fazer a manutenção.
+
 ## Qual a vantagem de se utilizar mocks ao escrever testes de unidade?
 Mocks possuem o objetivo de simular comportamentos das dependências de uma classe, para que os testes de unidade não se tornem testes de integração.
 
