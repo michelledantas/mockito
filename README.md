@@ -81,4 +81,6 @@ Mocks possuem o objetivo de simular comportamentos das dependências de uma clas
 
 ## Como podemos pedir ao Mockito para que crie um mock de uma determinada classe?
 Essa é uma das maneiras de criar um mock com o Mockito: 
+~~~java
     Mockito.mock(Classe.class)
+~~~
