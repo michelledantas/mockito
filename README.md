@@ -4,7 +4,7 @@ Aprendendo a usar Mockito com o curso do Alura
 
 Em alguns casos, as classes de um projeto dependem de outras classes que executam algum serviço externo, como, por exemplo, acessar um banco de dados. Às vezes, queremos testar apenas a lógica daquela classe de maneira isolada, mas pelo fato de ela depender de outra classe, não é possível isolar essas dependências e testá-la individualmente. Podemos solucionar esse problema fazendo a integração ou usando um Mock, que é o objetivo deste estudo. Foi utilizado o Mockito, a biblioteca mais conhecida para fazer Mocks em Java.
 
-# Mas o que são Mocks?
+## Mas o que são Mocks?
 De maneira resumida, o Mock é uma classe que simula os comportamentos de outra classe. Ele serve para cenários em que queremos testar as lógicas e os algoritmos de uma classe que tem dependência de outra classe, mas isolando essas dependências.
 
 Com os Mocks, conseguimos escrever um teste de unidade em vez de ter que usar um teste de integração, ou seja, que vai se integrar às dependências.
@@ -60,3 +60,5 @@ Porém, perceba que temos um problema: se tivermos que criar uma classe "dublê"
 
 Em vez disso, queremos escrever o nosso teste de unidade independentemente das outras classes Mock. É para isso que existem as bibliotecas de Mock: para não termos que dedicar tanto trabalho escrevendo as classes Mock uma a uma. Em vez disso, a biblioteca usa algum recurso próprio para criar essa classe dinamicamente e simula as dependências da classe que queremos testar.
 
+## Qual a vantagem de se utilizar mocks ao escrever testes de unidade?
+Mocks possuem o objetivo de simular comportamentos das dependências de uma classe, para que os testes de unidade não se tornem testes de integração.
