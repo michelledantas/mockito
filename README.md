@@ -11,6 +11,7 @@ Com os Mocks, conseguimos escrever um teste de unidade em vez de ter que usar um
 
 Como exemplo, considere a classe LeilaoDao, que estará no nosso projeto. Ela segue o padrão Objeto de Acesso a Dados (ou Data Access Object, em inglês), ou seja, é um objeto que isola o acesso a um banco de dados. Ela utiliza JPA, tem um EntityManager e uma série de métodos para salvar e buscar por ID. Confira o código dessa classe abaixo:
 
+ˋˋˋ
 @Repository
 public class LeilaoDao {
 
@@ -28,6 +29,7 @@ public class LeilaoDao {
     public Leilao buscarPorId(Long id) {
             return em.find(Leilao.class, id);
     }
+ˋˋˋ
 
 Porém, se chamarmos esses métodos, eles vão precisar do Entity Manager e terão que acessar o banco de dados. Então, se quisermos testar uma classe que depende da LeilaoDao, teremos que passar esta classe como parâmetro. Com isso, sempre que chamarmos qualquer método da classe, ele utilizará o LeilaoDao que, por sua vez, vai chamar o banco de dados.
 
@@ -35,6 +37,7 @@ Isso resultaria em um teste de integração, uma vez que estamos testando algo q
 
 Pense nessa simulação como um dublê de cinema: uma pessoa que faz uma cena perigosa no lugar do ator ou atriz do filme. A ideia é a mesma: não queremos testar a classe DAO verdadeira que acessa o banco de dados real, mas criar um LeilaoDaoFake, como no exemplo a seguir:
 
+ˋˋˋ
 public class LeilaoDaoFake {
 
     private Long id = 1l;
@@ -51,6 +54,7 @@ public class LeilaoDaoFake {
                             .filter(l -> l.getId().equals(id))
                             .findFirst().orElse(null);
     }
+ˋˋˋ    
 
 Essa classe seria um Mock, um dublê, que simula os comportamentos da classe LeilaoDao original. Ela não tem as anotações do Spring nem a dependência do EntityManager. Os métodos da LeilaoDaoFake não vão acessar o banco de dados, mas simplesmente fazer toda a simulação em memória. Assim, temos uma lista com um atributo e os métodos salvar e buscarPorId sempre vão manipular essa lista.
 
@@ -62,3 +66,7 @@ Em vez disso, queremos escrever o nosso teste de unidade independentemente das o
 
 ## Qual a vantagem de se utilizar mocks ao escrever testes de unidade?
 Mocks possuem o objetivo de simular comportamentos das dependências de uma classe, para que os testes de unidade não se tornem testes de integração.
+
+## Quais as maneiras de adicionar o Mockito à uma aplicação?
+* Baixando e adicionando seus jar’s na aplicação -> Podemos baixar os jar’s do Mockito e adicioná-los ao build path da aplicação.
+* Declarando-o como dependência da aplicação -> É possível declarar o Mockito como dependência da aplicação, utilizando o Maven, Gradle ou outra ferramenta de build/gestão de dependências.
