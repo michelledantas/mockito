@@ -120,4 +120,4 @@ Mockito.verify(pagamentoDao).salvar(captor.capture());
 ~~~
 
 ## Por que não é considerada uma boa prática fazer chamadas a métodos estáticos, do ponto de vista de testes automatizados?
-Porque métodos estáticos dificultam a utilização de mocks. Métodos estáticos dificultam a utilização de mocks, quando precisamos simular comportamentos.
+Porque métodos estáticos dificultam a utilização de mocks, quando precisamos simular comportamentos.
