@@ -107,6 +107,16 @@ private ArgumentCaptor <Pagamento> captor;
 ~~~
 
 Usando como exemplo este projeto ao chamar o método salvar da classe PagamentoDao, eu capturo o valor do objeto
+
+~~~java
+public void salvar(Pagamento pagamento) {
+		em.persist(pagamento);
+	}
+~~~
+
+
 ~~~java
 Mockito.verify(pagamentoDao).salvar(captor.capture());
 ~~~
+
+
