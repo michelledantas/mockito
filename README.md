@@ -97,3 +97,16 @@ Para indicar ao Mockito quais atributos são mocks. Essa anotação substitui a 
 ~~~java
    Mockito.when(mock.metodo()).thenThrow(Exception.class)
 ~~~
+
+## Como realizar um teste que precisa de um objeto criado internamente na classe que está sendo testada?
+Existe um conceito no Mockito chamado Captor, para capturar um determinado objeto. O recurso de Argument Captor nos ajuda a capturar um objeto criado internamente na classe sendo testada, quando ele é passado como parâmetro para um método do mock.
+
+~~~java
+@Captor
+private ArgumentCaptor <Pagamento> captor;
+~~~
+
+Usando como exemplo este projeto ao chamar o método salvar da classe PagamentoDao, eu capturo o valor do objeto
+~~~java
+Mockito.verify(pagamentoDao).salvar(captor.capture());
+~~~
