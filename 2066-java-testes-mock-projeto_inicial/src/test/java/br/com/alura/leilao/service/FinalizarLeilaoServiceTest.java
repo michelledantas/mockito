@@ -1,3 +1,5 @@
+package br.com.alura.leilao.service;
+
 import br.com.alura.leilao.dao.LeilaoDao;
 import br.com.alura.leilao.model.Lance;
 import br.com.alura.leilao.model.Leilao;

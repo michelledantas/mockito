@@ -21,4 +21,6 @@ public class PagamentoDao {
 		em.persist(pagamento);
 	}
 
+
+
 }
