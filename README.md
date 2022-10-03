@@ -95,5 +95,5 @@ Para indicar ao Mockito quais atributos são mocks. Essa anotação substitui a 
 ~~~
 
 ~~~java
-    Mockito.when(mock.metodo()).thenThrow(Exception.class)
+   Mockito.when(mock.metodo()).thenThrow(Exception.class)
 ~~~
