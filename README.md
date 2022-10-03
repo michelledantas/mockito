@@ -87,3 +87,13 @@ Essa é uma das maneiras de criar um mock com o Mockito:
 
 ## Pra que serve a anotação @Mock?
 Para indicar ao Mockito quais atributos são mocks. Essa anotação substitui a chamada ao método Mockito.mock(Classe.class).
+
+## Qual a maneira correta de configurar um mock para lançar uma exception?
+
+~~~java
+   Mockito.when(mock.metodo()).forceException(Exception.class)
+~~~
+
+~~~java
+    Mockito.when(mock.metodo()).thenThrow(Exception.class)
+~~~
