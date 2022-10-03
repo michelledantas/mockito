@@ -84,3 +84,6 @@ Essa é uma das maneiras de criar um mock com o Mockito:
 ~~~java
     Mockito.mock(Classe.class)
 ~~~
+
+## Pra que serve a anotação @Mock?
+Para indicar ao Mockito quais atributos são mocks. Essa anotação substitui a chamada ao método Mockito.mock(Classe.class).
